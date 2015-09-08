@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hogwarts</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+<meta charset="utf-8" />
+<title><%= yield(:title) %></title>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
 </head>
 <body>
-  <nav>
-    <h1>Welcome to Hogwarts!</h1>
-    <h2><a href="/houses">View Houses</a> | <a href="/students">View Students</a> | <a href="/students/new">Enroll</a></h2>
-  </nav>
+<marquee scrollamount="30" behavior="alternate"><h1><%= yield(:title) %></h1></marquee>
 
-  <%= yield %>
+<main>
+<%= yield %>
+</main>
 
+<img src="/assets/fire.gif" alt="fire" class="foyah" />
 </body>
 </html>

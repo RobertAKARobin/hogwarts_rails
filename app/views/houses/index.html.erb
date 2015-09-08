@@ -1,7 +1,14 @@
-<h1>The houses</h1>
-<% houses.each do |house| %>
-  <div class="house">
-    <h2><a href="houses_path"</a>@house</h2>
-    <img src="<% house.image_url %>"/>
-  <div>
+<% content_for :title, "Houses of Hogwarts" %>
+
+<table>
+<tr>
+<th>Name</th>
+<th>Enrollment</th>
+</tr>
+<% @houses.each do |house| %>
+<tr>
+<td><a href="houses/<%= house.id %>"><%= house.name %></a></td>
+<td><%= house.enrollment(house.id).count %></td>
+</tr>
 <% end %>
+</table>

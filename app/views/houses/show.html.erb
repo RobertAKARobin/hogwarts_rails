@@ -1,7 +1,11 @@
-<h1><%= @house.name %></h1>
-<% @house.students.each do |student| %>
-<div class="student">
-  <h2><%= student.name %></h2>
-  <%= image_tag student.img_url %>
-</div>
+<% content_for :title, "#{@house.name} Roster" %>
+
+<%= image_tag "#{@house.name.downcase}.png" %>
+
+<ul>
+<% @house.enrollment(@house.id).each do |student| %>
+
+<li><a target="_blank" href="../students/<%= student.id %>"><%= student.name %></a></li>
+
 <% end %>
+</ul>

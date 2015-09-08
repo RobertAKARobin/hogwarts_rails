@@ -1,6 +1,31 @@
-<h1>Here are the students</h1>
+<% content_for :title, "The sorting" %>
+
+<%= image_tag "hat.gif" %>
+
+<%= form_for :student, url: students_path do |f| %>
+<table>
+<tr>
+<th>Name</th>
+<th>House</th>
+<th><input name="do_resort" type="submit" value="Re-sort" /></th>
+<th><input name="do_destroy" type="submit" value="Avada kedavera" /></th>
+</tr>
+
 <% @students.each do |student| %>
-  <div>
-    <%= link_to student, students_path(student) %> - <%= student.house %>
+<tr>
+<td><a target="_blank" href="students/<%= student.id %>"><%= student.name %></a></td>
+<td><%= student.house(student.house_id) %></td>
+<td><%= check_box_tag "resort[]", student.id %></td>
+<td><%= check_box_tag "destroy[]", student.id %></td>
+</tr>
+
 <% end %>
-  </div>
+<tr>
+<td><%= f.text_field :name, :placeholder => "Student's name" %></td>
+<td><input name="do_new" type="submit" value="Enroll" /></td>
+<td><button type="button" class="toggle" onclick="toggle('resort')">Toggle</button></td>
+<td><button type="button" class="toggle" onclick="toggle('destroy')">Toggle</button></td>
+</tr>
+</table>
+
+<% end%>

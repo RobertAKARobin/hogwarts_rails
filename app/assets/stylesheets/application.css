@@ -1,61 +1,172 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
-
-@import url("http://fnt.webink.com/wfs/webink.css/?project=548D2AB5-FEF2-4BB9-BA39-A9506DCC5723&fonts=81DCB682-CEF0-F2EE-50B4-29BCB883721E:f=Ablefont");
-@import url(http://fonts.googleapis.com/css?family=Irish+Grover);
-
-
-body {
-  font-family: Ablefont, Irish Grover;
-  text-align: center;
-  font-color: #7C2A30;
+body
+{
+font-family:"Comic Sans MS", cursive, sans-serif;
+}
+h1,h2,h3,h4,h5,h6,
+dt
+{
+font-family: Papyrus, fantasy;
+}
+*
+{
+margin:0;
+border:0;
+padding:0;
+border-collapse:collapse;
+border-spacing:0;
+font-weight:bold;
+font-size:inherit;
+font-style:inherit;
+color:white;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+font-family:inherit;
+}
+*:focus
+{
+outline:0;
+}
+html,body
+{
+width:100%;
+position:relative;
+}
+html
+{
+background-image:url("/assets/star.jpg");
+height:100%;
+}
+body
+{
+line-height:1.2em;
+font-weight:normal;
+font-style:normal;
+min-width:650px;
+min-height:100%;
+margin:0 auto;
+text-align:center;
+}
+h1,h2,h3,h4,h5,h6,
+dt
+{
+font-weight:bold;
+text-align:center;
+}
+h1,h2
+{
+font-size:3em;
+line-height:1em;
+}
+h1:after
+{
+content:"!!!";
+}
+marquee
+{
+margin-top:0;
+padding:2em 0;
+background-color:#036;
+color:lime;
+}
+a
+{
+color:pink;
 }
 
-nav {
-  padding: 15px;
-  background-color: #D8AE48;
-  border-radius: 40px 0 40px 0;
+main
+{
+padding:2em;
+}
+main,
+main *
+{
+margin:1em auto;
+}
+body,form *
+{
+font-size:14px;
 }
 
-h1 {
-  font-size: 36px;
+ul,ol,dl
+{
+display:inline-block;
+}
+li,dd,dt
+{
+text-align:left;
+}
+dt:not(:nth-child(1))
+{
+margin-top:1em;
+}
+dd
+{
+margin-left:2em;
 }
 
-h2 {
-  font-size: 22px;
+img
+{
+display:block;
 }
 
-.student {
-  display: inline-block;
-  background-color: #D8AE48;
-  width: 350px;
-  text-align: center;
-  margin: 10px;
-  padding: 10px;
-  border: 10px solid black;
-  border-radius: 10%;
+
+td,th
+{
+border:1px solid #ccc;
+}
+th
+{
+border-bottom:2px solid #bbb;
+background-color:rgba(150,0,0,0.05);
+}
+tr>*
+{
+padding:1em;
+}
+td:empty
+{
+border:0;
 }
 
-.house {
-  display: inline-block;
+
+
+label,input,button
+{
+display:inline-block;
+border-radius:5px;
+margin:0 auto;
+}
+input[type=text],
+input[type=submit],
+button
+{
+padding:.5em 1em;
+}
+input[type=submit],
+button
+{
+display:block;
+cursor:pointer;
+background-color:#dbb;
+color:red;
+}
+input[type=submit]:hover,
+button:hover
+{
+background-color:#620;
+color:red;
+}
+button.toggle
+{
+background-color:#ccc;
 }
 
-.house img {
-  display: block;
-}
-
-img {
-  border-radius: 40%;
-  height: 300px;
+.foyah
+{
+position:fixed;
+width:100%;
+bottom:0;
+left:0;
+margin:0;
 }
